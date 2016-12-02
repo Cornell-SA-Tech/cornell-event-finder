@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmT-Ml-VxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-185" y="123"/>
+            <point key="canvasLocation" x="-151" y="123"/>
         </scene>
         <!--Trending ▼-->
         <scene sceneID="Mfu-L3-d37">
@@ -96,6 +97,7 @@
                                     <outlet property="eventDate" destination="hiI-dB-CcE" id="I0K-MF-pVK"/>
                                     <outlet property="eventImage" destination="nwg-2P-nxu" id="Jjn-bN-9JK"/>
                                     <outlet property="eventTitle" destination="lmu-I4-hTp" id="ZBw-Uy-AtV"/>
+                                    <segue destination="iyH-mT-o9d" kind="show" id="erT-EU-fpk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -114,6 +116,121 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYi-Dl-26J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="533.60000000000002" y="122.78860569715144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="W49-dz-7Ar">
+            <objects>
+                <viewController id="iyH-mT-o9d" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uZ3-vc-1Rx"/>
+                        <viewControllerLayoutGuide type="bottom" id="2nK-ft-pIW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ek7-gf-w23">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68I-GS-8Yb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Da-fZ-DoH" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Doge" translatesAutoresizingMaskIntoConstraints="NO" id="eWz-x6-aRY">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="eWz-x6-aRY" secondAttribute="height" multiplier="16:9" id="l5X-uH-CJE"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rap Concert Committee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygV-9Q-SXC">
+                                                <rect key="frame" x="119" y="219" width="136" height="14.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chance the Rapper: All Night Concert" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvb-vG-gvD">
+                                                <rect key="frame" x="19.5" y="241" width="336.5" height="24"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THU DEC 15, 8:00 PM - 11:00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tz-O6-kO3">
+                                                <rect key="frame" x="73" y="273" width="228" height="18"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgH-5V-IQ2">
+                                                <rect key="frame" x="32" y="323" width="311" height="70"/>
+                                                <string key="text">Chance has stated in interviews with XXL &amp; Complex that Kanye West, James Brown, MC Hammer, Prince, Lupe Fiasco, Common, Lil Wayne, Esham, eminem, Souls of Mischief and Freestyle Fellowship blah blah</string>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zAE-Gp-K1J">
+                                                <rect key="frame" x="0.0" y="425" width="375" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="dmC-DU-jEc"/>
+                                                </constraints>
+                                            </mapView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3904 Jabari Shoal Suite 087, Happy City, New York" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zY1-eT-Nhe">
+                                                <rect key="frame" x="8" y="561" width="359" height="18"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bvb-vG-gvD" secondAttribute="trailing" constant="16" id="1wb-Gv-ihM"/>
+                                            <constraint firstItem="eWz-x6-aRY" firstAttribute="leading" secondItem="5Da-fZ-DoH" secondAttribute="leading" id="2PO-h7-5E9"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Tz-O6-kO3" secondAttribute="trailing" constant="16" id="4nT-bB-Ml9"/>
+                                            <constraint firstItem="zAE-Gp-K1J" firstAttribute="leading" secondItem="5Da-fZ-DoH" secondAttribute="leading" id="7Uf-3v-u0K"/>
+                                            <constraint firstItem="6Tz-O6-kO3" firstAttribute="centerX" secondItem="5Da-fZ-DoH" secondAttribute="centerX" id="8VY-ZZ-HT0"/>
+                                            <constraint firstItem="6Tz-O6-kO3" firstAttribute="top" secondItem="bvb-vG-gvD" secondAttribute="bottom" constant="8" id="9V1-gS-EPC"/>
+                                            <constraint firstItem="ygV-9Q-SXC" firstAttribute="centerX" secondItem="5Da-fZ-DoH" secondAttribute="centerX" id="Ccs-dA-lGB"/>
+                                            <constraint firstItem="sgH-5V-IQ2" firstAttribute="top" secondItem="6Tz-O6-kO3" secondAttribute="bottom" constant="32" id="Dd9-CM-iiT"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ygV-9Q-SXC" secondAttribute="trailing" constant="16" id="J0A-Xi-bFr"/>
+                                            <constraint firstItem="zY1-eT-Nhe" firstAttribute="top" secondItem="zAE-Gp-K1J" secondAttribute="bottom" constant="8" id="Olc-rp-cm5"/>
+                                            <constraint firstItem="ygV-9Q-SXC" firstAttribute="top" secondItem="eWz-x6-aRY" secondAttribute="bottom" constant="8" id="P31-v3-P9Y"/>
+                                            <constraint firstAttribute="trailing" secondItem="zY1-eT-Nhe" secondAttribute="trailing" constant="8" id="PXQ-qR-BeF"/>
+                                            <constraint firstItem="bvb-vG-gvD" firstAttribute="top" secondItem="ygV-9Q-SXC" secondAttribute="bottom" constant="8" id="ZKl-VM-M3G"/>
+                                            <constraint firstItem="zAE-Gp-K1J" firstAttribute="top" secondItem="sgH-5V-IQ2" secondAttribute="bottom" constant="32" id="a6n-Ah-ioS"/>
+                                            <constraint firstItem="zY1-eT-Nhe" firstAttribute="centerX" secondItem="5Da-fZ-DoH" secondAttribute="centerX" id="amX-qc-VQF"/>
+                                            <constraint firstItem="6Tz-O6-kO3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Da-fZ-DoH" secondAttribute="leading" constant="16" id="mL8-ht-ebU"/>
+                                            <constraint firstAttribute="trailing" secondItem="sgH-5V-IQ2" secondAttribute="trailing" constant="32" id="mmB-tA-kcg"/>
+                                            <constraint firstItem="ygV-9Q-SXC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Da-fZ-DoH" secondAttribute="leading" constant="16" id="pGy-OA-Er4"/>
+                                            <constraint firstAttribute="trailing" secondItem="eWz-x6-aRY" secondAttribute="trailing" id="pgk-g8-7Eu"/>
+                                            <constraint firstItem="bvb-vG-gvD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Da-fZ-DoH" secondAttribute="leading" constant="16" id="qWG-ah-YuB"/>
+                                            <constraint firstItem="zY1-eT-Nhe" firstAttribute="leading" secondItem="5Da-fZ-DoH" secondAttribute="leading" constant="8" id="rGP-GP-huF"/>
+                                            <constraint firstItem="eWz-x6-aRY" firstAttribute="top" secondItem="5Da-fZ-DoH" secondAttribute="top" id="v5X-gC-jnt"/>
+                                            <constraint firstItem="sgH-5V-IQ2" firstAttribute="leading" secondItem="5Da-fZ-DoH" secondAttribute="leading" constant="32" id="wNw-JD-OIR"/>
+                                            <constraint firstItem="bvb-vG-gvD" firstAttribute="centerX" secondItem="5Da-fZ-DoH" secondAttribute="centerX" id="xcf-lb-dWK"/>
+                                            <constraint firstAttribute="trailing" secondItem="zAE-Gp-K1J" secondAttribute="trailing" id="ylJ-eM-ozf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5Da-fZ-DoH" firstAttribute="leading" secondItem="68I-GS-8Yb" secondAttribute="leading" id="95b-Gj-JLa"/>
+                                    <constraint firstItem="5Da-fZ-DoH" firstAttribute="top" secondItem="68I-GS-8Yb" secondAttribute="top" id="9Zz-3f-PlP"/>
+                                    <constraint firstItem="5Da-fZ-DoH" firstAttribute="width" secondItem="68I-GS-8Yb" secondAttribute="width" id="NcI-XP-Twz"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Da-fZ-DoH" secondAttribute="bottom" id="gSj-vU-w5y"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Da-fZ-DoH" secondAttribute="trailing" id="mda-k7-jCy"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="68I-GS-8Yb" firstAttribute="height" secondItem="ek7-gf-w23" secondAttribute="height" id="DAl-Mt-nA9"/>
+                            <constraint firstItem="2nK-ft-pIW" firstAttribute="top" secondItem="68I-GS-8Yb" secondAttribute="bottom" id="GKF-TU-qMC"/>
+                            <constraint firstItem="68I-GS-8Yb" firstAttribute="leading" secondItem="ek7-gf-w23" secondAttribute="leading" id="Iq4-Om-amH"/>
+                            <constraint firstAttribute="trailing" secondItem="68I-GS-8Yb" secondAttribute="trailing" id="WIV-uu-IvS"/>
+                            <constraint firstItem="5Da-fZ-DoH" firstAttribute="height" secondItem="ek7-gf-w23" secondAttribute="height" id="iA8-K1-XMe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="siO-ZR-r5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1237.5999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
     <resources>

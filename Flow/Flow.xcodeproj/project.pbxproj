@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061F0D941DF225FA000BA226 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061F0D931DF225FA000BA226 /* MapKit.framework */; };
 		0693FAEF1DF1FF33000A4ECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693FAEE1DF1FF33000A4ECF /* AppDelegate.swift */; };
 		0693FAF11DF1FF33000A4ECF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693FAF01DF1FF33000A4ECF /* ViewController.swift */; };
 		0693FAF41DF1FF33000A4ECF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0693FAF21DF1FF33000A4ECF /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		061F0D931DF225FA000BA226 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0693FAEB1DF1FF33000A4ECF /* Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0693FAEE1DF1FF33000A4ECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0693FAF01DF1FF33000A4ECF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				061F0D941DF225FA000BA226 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		061F0D921DF225FA000BA226 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				061F0D931DF225FA000BA226 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0693FAE21DF1FF33000A4ECF = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +96,7 @@
 				0693FB021DF1FF33000A4ECF /* FlowTests */,
 				0693FB0D1DF1FF33000A4ECF /* FlowUITests */,
 				0693FAEC1DF1FF33000A4ECF /* Products */,
+				061F0D921DF225FA000BA226 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,6 +212,11 @@
 					0693FAEA1DF1FF33000A4ECF = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0693FAFE1DF1FF33000A4ECF = {
 						CreatedOnToolsVersion = 8.1;
@@ -513,6 +530,7 @@
 				0693FB151DF1FF33000A4ECF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0693FB161DF1FF33000A4ECF /* Build configuration list for PBXNativeTarget "FlowTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +539,7 @@
 				0693FB181DF1FF33000A4ECF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0693FB191DF1FF33000A4ECF /* Build configuration list for PBXNativeTarget "FlowUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +548,7 @@
 				0693FB1B1DF1FF33000A4ECF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
