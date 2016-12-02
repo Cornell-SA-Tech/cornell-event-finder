@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedVC:UITableViewController
+class FeedVC:UITableViewController, UISearchBarDelegate
 {
     @IBOutlet weak var searchBar: UISearchBar!
     let data = [["Hello", "World", "2/12"],
@@ -40,5 +40,10 @@ class FeedVC:UITableViewController
         let dataForCell = data[indexPath.row]
         cell.configure(title: dataForCell[0], caption: dataForCell[1], date: dataForCell[2])
         return cell
+    }
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool
+    {
+        //NOTE TO VINCE: open the new VC from here with performSegue stuff
+        return true
     }
 }
