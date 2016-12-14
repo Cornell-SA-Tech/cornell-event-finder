@@ -43,7 +43,7 @@ class FeedVC:UITableViewController, UISearchBarDelegate
     }
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool
     {
-        //NOTE TO VINCE: open the new VC from here with performSegue stuff
+        performSegue(withIdentifier: "showSearchView", sender: self)
         return true
     }
 }
