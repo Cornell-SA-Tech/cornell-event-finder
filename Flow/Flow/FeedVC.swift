@@ -17,12 +17,14 @@ class FeedVC:UITableViewController, UISearchBarDelegate
     let feedOptions = ["Trending", "Nightlife", "Health & Fitness", "Concerts & Shows", "Art & Culture", "Philanthropy", "Food", "Education"]
     var titleButton: UIButton!
     var feedOptionButtons: [UIButton]!
+    var blurView: UIVisualEffectView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         setRowHeight()
         initNavBarOverlay()
+        initTableBlur()
         initFeedOptionButtons()
     }
     
@@ -59,7 +61,17 @@ class FeedVC:UITableViewController, UISearchBarDelegate
         titleButton.sizeToFit()
     }
     /**
+     Initializes the view that will put a "frosted glass" effect over the table when the user wants to select a different feed option.
+     */
+    private func initTableBlur()
+    {
+        blurView = UIVisualEffectView()
+        blurView.frame = view.frame
+        view.addSubview(blurView)
+    }
+    /**
      Creates all the feed option buttons, setting their constraints and text. The buttons are then turned invisible.
+     - important: Since the buttons should appear on the top of everything else, they should be initialized last, specifically after the table blur
      */
     private func initFeedOptionButtons()
     {
@@ -71,8 +83,8 @@ class FeedVC:UITableViewController, UISearchBarDelegate
             button.setTitle(feedOptions[i], for: .normal)
             button.addTarget(self, action: #selector(onFeedOptionButtonClick), for: .touchUpInside)
             feedOptionButtons.append(button)
+            blurView.contentView.addSubview(button)
             
-            view.addSubview(button)
             if (i == 0)
             {
                 view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[view]-16-[button]", options: .alignAllCenterX, metrics: nil, views: ["view":view, "button":button]))
@@ -88,6 +100,8 @@ class FeedVC:UITableViewController, UISearchBarDelegate
      Animate feed option buttons either appearing or fading. If appearing, start appearing from the top. If fading, start fading from the bottom. The buttons will fade if they are currently showing; they'll appear if they're currently faded.
      
      Fading will not begin unless all the buttons are either present or not present (an animation is NOT occurring).
+     
+     The table view will also be disabled/enabled, with a "frosted glass" effect over it.
      */
     private func animateFeedOptionButtons()
     {
@@ -109,13 +123,17 @@ class FeedVC:UITableViewController, UISearchBarDelegate
             {
                 UIView.animate(withDuration: 0.05, delay: Double(i) * 0.05, options: .curveLinear, animations: {self.feedOptionButtons[self.feedOptionButtons.count - i].alpha = 0.0}, completion: nil)
             }
+            UIView.animate(withDuration: Double(feedOptionButtons.count) * 0.05, animations: {self.blurView.effect = nil})
+            tableView.isScrollEnabled = true
         }
         else
         {
             for i in 0..<feedOptionButtons.count
             {
                 UIView.animate(withDuration: 0.05, delay: Double(i) * 0.05, options: .curveLinear, animations: {self.feedOptionButtons[i].alpha = 1.0}, completion: nil)
-            } 
+            }
+            UIView.animate(withDuration: Double(feedOptionButtons.count) * 0.05, animations: {self.blurView.effect = UIBlurEffect(style: .light)})
+            tableView.isScrollEnabled = false
         }
     }
     /**
