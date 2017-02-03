@@ -35,18 +35,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" text="" placeholder="search events" translucent="NO" id="Gnm-rR-dzh">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="JSG-M2-Rej" id="LAS-RA-10b"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="300" id="ahZ-Rp-zRx" customClass="FeedCell" customModule="Flow" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ahZ-Rp-zRx" id="oiH-XW-mex">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
@@ -117,11 +108,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="flow" id="NXg-1r-eLR">
-                        <barButtonItem key="leftBarButtonItem" image="Search" id="ahs-mT-GoV"/>
-                        <barButtonItem key="rightBarButtonItem" image="AccountCircle" id="S22-eO-nd0"/>
+                        <barButtonItem key="leftBarButtonItem" image="Search" id="ahs-mT-GoV">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="onSearchClicked:" destination="JSG-M2-Rej" id="gy6-af-ObL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="AccountCircle" id="S22-eO-nd0">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="Gnm-rR-dzh" id="qUw-mq-MN8"/>
+                        <outlet property="searchNavBarItem" destination="ahs-mT-GoV" id="rcZ-A4-e33"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYi-Dl-26J" userLabel="First Responder" sceneMemberID="firstResponder"/>
