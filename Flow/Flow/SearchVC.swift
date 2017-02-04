@@ -1,10 +1,12 @@
 import UIKit
 
-class SearchVC:UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate
+class SearchVC:UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate
 {
-    let data = ["Music", "Art", "Food", "Entertainment", "Education", "Career", "Sale", "Party"]
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    let data = ["Music", "Art", "Food", "Entertainment", "Education", "Career", "Sale", "Party"]
+    let MARGIN:CGFloat = 16
     
     override func viewDidLoad()
     {
@@ -22,10 +24,19 @@ class SearchVC:UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     {
         return data.count
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let width = (view.frame.width - (MARGIN * 3)) / 2
+        return CGSize(width: width, height: width)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
+    {
+        return UIEdgeInsets(top: MARGIN, left: MARGIN, bottom: MARGIN, right: MARGIN)
+    }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
     {
-        navigationController?.popViewController(animated: true)
         navigationController?.navigationBar.isHidden = false
+        navigationController?.popViewController(animated: false)
     }
 }
