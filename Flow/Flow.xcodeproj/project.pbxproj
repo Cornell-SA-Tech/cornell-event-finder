@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		061F0D941DF225FA000BA226 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061F0D931DF225FA000BA226 /* MapKit.framework */; };
+		064B1F9F1E4679620019AEE3 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B1F9E1E4679620019AEE3 /* SearchVC.swift */; };
+		064B1FA11E467B220019AEE3 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B1FA01E467B220019AEE3 /* SearchCell.swift */; };
 		0693FAEF1DF1FF33000A4ECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693FAEE1DF1FF33000A4ECF /* AppDelegate.swift */; };
 		0693FAF41DF1FF33000A4ECF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0693FAF21DF1FF33000A4ECF /* Main.storyboard */; };
 		0693FAF61DF1FF33000A4ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0693FAF51DF1FF33000A4ECF /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		061F0D931DF225FA000BA226 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		064B1F9E1E4679620019AEE3 /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		064B1FA01E467B220019AEE3 /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		0693FAEB1DF1FF33000A4ECF /* Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0693FAEE1DF1FF33000A4ECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0693FAF31DF1FF33000A4ECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				0693FAF71DF1FF33000A4ECF /* LaunchScreen.storyboard */,
 				0693FAFA1DF1FF33000A4ECF /* Info.plist */,
 				0693FB1E1DF2054E000A4ECF /* FeedCell.swift */,
+				064B1F9E1E4679620019AEE3 /* SearchVC.swift */,
+				064B1FA01E467B220019AEE3 /* SearchCell.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -279,6 +285,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				064B1F9F1E4679620019AEE3 /* SearchVC.swift in Sources */,
+				064B1FA11E467B220019AEE3 /* SearchCell.swift in Sources */,
 				0693FB1D1DF20350000A4ECF /* FeedVC.swift in Sources */,
 				0693FB1F1DF2054E000A4ECF /* FeedCell.swift in Sources */,
 				0693FAEF1DF1FF33000A4ECF /* AppDelegate.swift in Sources */,
