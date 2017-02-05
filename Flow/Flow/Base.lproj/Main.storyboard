@@ -112,8 +112,7 @@
                         <barButtonItem key="leftBarButtonItem" image="Search" id="ahs-mT-GoV">
                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
-                                <action selector="onSearchClicked:" destination="JSG-M2-Rej" id="gy6-af-ObL"/>
-                                <segue destination="JvK-7X-jwg" kind="show" id="Tqe-8C-Vai"/>
+                                <segue destination="JvK-7X-jwg" kind="show" identifier="searchSegue" id="Tqe-8C-Vai"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="AccountCircle" id="S22-eO-nd0">

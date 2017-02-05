@@ -6,7 +6,7 @@ class SearchVC:UIViewController, UICollectionViewDataSource, UICollectionViewDel
     @IBOutlet weak var collectionView: UICollectionView!
     
     let data = ["Music", "Art", "Food", "Entertainment", "Education", "Career", "Sale", "Party"]
-    let MARGIN:CGFloat = 16
+    var categoryContainer:CategoryContainer?
     
     override func viewDidLoad()
     {
@@ -26,15 +26,26 @@ class SearchVC:UIViewController, UICollectionViewDataSource, UICollectionViewDel
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let width = (view.frame.width - (MARGIN * 3)) / 2
+        let width = (view.frame.width - (Metrics.margin.rawValue * 3)) / 2
         return CGSize(width: width, height: width)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
     {
-        return UIEdgeInsets(top: MARGIN, left: MARGIN, bottom: MARGIN, right: MARGIN)
+        return UIEdgeInsets(top: Metrics.margin.rawValue, left: Metrics.margin.rawValue, bottom: Metrics.margin.rawValue, right: Metrics.margin.rawValue)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        let category = data[indexPath.row]
+        categoryContainer?.searchFor(category)
+        unwindSegue()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
+    {
+        unwindSegue()
+    }
+    
+    private func unwindSegue()
     {
         navigationController?.navigationBar.isHidden = false
         navigationController?.popViewController(animated: false)
