@@ -18,15 +18,12 @@ class FeedCell:UITableViewCell
     
     override func awakeFromNib()
     {
-        //roundCorners()
+        roundCorners()
     }
     private func roundCorners()
     {
-        let maskPath = UIBezierPath(roundedRect: container.bounds, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: 10.0, height: 10.0))
-        let maskLayer = CAShapeLayer(layer: maskPath)
-        maskLayer.frame = container.bounds
-        maskLayer.path = maskPath.cgPath
-        container.layer.mask = maskLayer
+        eventImage.layer.cornerRadius = 10
+        eventImage.clipsToBounds = true
     }
     func configure(title:String, caption:String, date:String)
     {
